@@ -1,0 +1,9 @@
+.Todo {
+    padding-bottom: 1em;
+}
+
+.todo-segment {
+    padding: 1em !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
