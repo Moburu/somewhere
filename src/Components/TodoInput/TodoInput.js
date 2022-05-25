@@ -1,26 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './TodoInput.css';
-import { Input } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../features/todosSlice/todosSlice';
+import { store } from '../App/store';
 
 export const TodoInput = props => {
-  const dispatch = useDispatch;
+  const [input, setInput] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addTodo(e.target.value));
+    const { target } = e;
+    const { todo } = Object.fromEntries(new FormData(target))
+    dispatch(addTodo(todo));
+    setInput('');
   }
+
+  const handleChange = (e, { name, value }) => setInput(value);
 
   return (
     <div className='TodoInput'>
-      <Input
-        fluid
-        icon='delete'
-        size='huge'
-        placeholder='What needs to get done?'
-        onSubmit={handleSubmit}
-      />
+      <Form onSubmit={handleSubmit}>
+        <Form.Input
+          fluid
+          icon='delete'
+          size='huge'
+          name='todo'
+          placeholder='What needs to get done?'
+          onChange={handleChange}
+          value={input}
+        />
+      </Form>
     </div>
   )
 }

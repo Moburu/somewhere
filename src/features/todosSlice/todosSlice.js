@@ -4,14 +4,14 @@ const initialState = ['Sample todo'];
 
 const todosSlice = createSlice({
   name: 'todos',
-  initialState,
+  initialState: initialState,
   reducers: {
     addTodo: (state, action) => {
-      state.todos.push(action.payload);
+      state.push(action.payload);
     },
     removeTodo: (state, action) => {
-      state.todos = state.todos.filter(
-        todo => todo === action.payload
+      return state.filter(
+        (todo) => todo !== action.payload
       );
     }
   }
