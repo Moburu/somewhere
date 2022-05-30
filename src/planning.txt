@@ -5,7 +5,6 @@ Done:
 - Animations (buggy)
 
 Up next:
-- Edit todo functionality
 - Figure out how to handle todos that exceed the width of the Segment
 - Utilize local storage
 
