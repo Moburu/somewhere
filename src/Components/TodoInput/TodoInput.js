@@ -24,7 +24,6 @@ export const TodoInput = props => {
       <Form onSubmit={handleSubmit}>
         <Form.Input
           fluid
-          icon='delete'
           size='huge'
           name='todo'
           placeholder='What needs to get done?'

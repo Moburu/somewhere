@@ -1,9 +1,26 @@
 .Todo {
-    padding-bottom: 1em;
+    padding-bottom: 10px;
+}
+
+.content {
+    display: inline-flex;
+    align-content: center;
+    padding: 5px;
 }
 
 .todo-segment {
     padding: 1em !important;
     display: flex !important;
+    height: 70px !important;
     justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+/* kinda sussy but works for now */
+.edit-input {
+    font-size: 20px !important;
+    padding-right: 10px !important;
+    margin-left: -21px !important;
+    margin-top: 3px !important;
 }

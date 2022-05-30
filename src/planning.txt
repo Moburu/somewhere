@@ -1,0 +1,18 @@
+Done:
+- Basic UI
+- Redux store setup
+- Add and delete todo implemented (buggy)
+- Animations (buggy)
+
+Up next:
+- Edit todo functionality
+- Figure out how to handle todos that exceed the width of the Segment
+- Utilize local storage
+
+In the future:
+- Categories w/ color indicators?
+- React router for multiple pages
+
+Bugs found:
+- If there are multiple todos w/ the same content, deleting one will delete them all
+- Fade out animation always fades out the last todo, even if it's deleting a different todo
