@@ -5,13 +5,17 @@ Done:
 - Animations (buggy)
 
 Up next:
-- Figure out how to handle todos that exceed the width of the Segment
-- Utilize local storage
+-
 
 In the future:
+- Settings button
+- Find a more elegant way to display multiple lines of text on a todo
 - Categories w/ color indicators?
 - React router for multiple pages
 
 Bugs found:
 - If there are multiple todos w/ the same content, deleting one will delete them all
 - Fade out animation always fades out the last todo, even if it's deleting a different todo
+
+What have I learned:
+- You need to use store.getState() in a subscribed listener in order to get the state post-dispatch. If you use the value of a selector, it will give you the old state.

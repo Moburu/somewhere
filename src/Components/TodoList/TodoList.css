@@ -3,3 +3,11 @@
     margin: auto;
     padding-top: 2em;
 }
+
+@media screen and (600px <= width <= 900px) {
+    .TodoList { width: 75% }
+}
+
+@media screen and (width < 600px) {
+    .TodoList { width: 98% }
+}

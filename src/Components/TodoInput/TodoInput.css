@@ -3,3 +3,11 @@
     margin: auto;
     padding-top: 2em;
 }
+
+@media screen and (600px <= width <= 900px) {
+    .TodoInput { width: 75% }
+}
+
+@media screen and (width < 600px) {
+    .TodoInput { width: 98% }
+}

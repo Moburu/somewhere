@@ -13,7 +13,7 @@ export const TodoList = props => {
       <Transition.Group
         as={List}
         animation='fade left'
-        duration={150}
+        duration={200}
         size='huge'
         verticalAlign='middle'
       >

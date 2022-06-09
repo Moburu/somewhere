@@ -31,6 +31,12 @@ export const Todo = props => {
     setIsEditing(false);
   }
 
+  const handleCancel = e => {
+    e.preventDefault();
+    setIsEditing(false);
+    setEditInput(props.content);
+  }
+
   return (
 	<div className='Todo'>
 	  <Segment className='todo-segment' raised size='huge' color='purple' vertical>
@@ -41,11 +47,12 @@ export const Todo = props => {
               <Input placeholder='New todo' transparent className='edit-input' autoFocus value={editInput} onChange={handleChange}/>
             </Form>
           </span> :
-          props.content
+          <span className="wrapper">{props.content}</span>
         }
       </span>
       { isEditing ?
         <span className='buttons'>
+          <Button compact circular basic color='purple' onClick={handleCancel} size='small' icon='cancel' />
           <Button compact circular basic color='purple' onClick={handleSubmit} size='small' icon='checkmark' />
         </span>
         :
