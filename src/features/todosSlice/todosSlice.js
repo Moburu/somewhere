@@ -19,8 +19,8 @@ const todosSlice = createSlice({
     },
     editTodo: (state, action) => {
       return state.map(
-        (todo) => {
-          if (todo === action.payload[0]) {
+        (todo, index) => {
+          if (index === action.payload[0]) {
             return action.payload[1];
           }
           else {

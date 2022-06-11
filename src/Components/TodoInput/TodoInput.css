@@ -1,7 +1,6 @@
 .TodoInput {
     width: 50%;
     margin: auto;
-    padding-top: 2em;
 }
 
 @media screen and (600px <= width <= 900px) {

@@ -10,7 +10,6 @@ export const store = configureStore({
 export const fetchLocalState = () => {
     try {
       const jsonizedTodos = localStorage.getItem('todos');
-      console.log(jsonizedTodos);
       if (jsonizedTodos === null) {
         return [];
       }

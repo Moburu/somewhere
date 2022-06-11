@@ -1,11 +1,12 @@
 Done:
 - Basic UI
 - Redux store setup
-- Add and delete todo implemented (buggy)
+- Add, delete, and edit todo implemented (buggy)
 - Animations (buggy)
+- localStorage integration
 
 Up next:
--
+- Notes app
 
 In the future:
 - Settings button
@@ -14,7 +15,6 @@ In the future:
 - React router for multiple pages
 
 Bugs found:
-- If there are multiple todos w/ the same content, deleting one will delete them all
 - Fade out animation always fades out the last todo, even if it's deleting a different todo
 
 What have I learned:

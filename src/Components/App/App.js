@@ -5,6 +5,7 @@ import { setTodos, selectTodos } from '../../features/todosSlice/todosSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchLocalState } from './store';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 function App() {
   const dispatch = useDispatch();
@@ -13,11 +14,17 @@ function App() {
     dispatch(setTodos(fetchLocalState()));
   }, [dispatch])
 
+  const onDragEnd = result => {};
+
   return (
-    <div className="App">
-      <Navbar />
-      <TodoApp />
-    </div>
+    <DragDropContext
+      onDragEnd={onDragEnd}
+    >
+      <div className="App">
+        <Navbar />
+        <TodoApp />
+      </div>
+    </DragDropContext>
   );
 }
 

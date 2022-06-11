@@ -10,6 +10,7 @@
 }
 
 .todo-segment {
+    background-color: white !important;
     padding: 1em !important;
     display: flex !important;
     height: 70px !important;
