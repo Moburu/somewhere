@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css';
 import { Menu } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import headerLogo from './Somewhere.png';
 
 const Navbar = props => {
@@ -15,8 +16,8 @@ const Navbar = props => {
           size='large'
         >
           <Menu.Item header>Somewhere</Menu.Item>
-          <Menu.Item name='todo'/>
-          <Menu.Item name='notes'/>
+          <Menu.Item name='todo'><Link to="/todo">Todo</Link></Menu.Item>
+          <Menu.Item name='notes'><Link to="/notes">Notes</Link></Menu.Item>
         </Menu>
     </div>
     // <div className="Navbar">
