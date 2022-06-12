@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, isAsyncThunkAction } from '@reduxjs/toolkit'
 
 const initialState = [];
 
@@ -28,6 +28,11 @@ const todosSlice = createSlice({
           }
         }
       )
+    },
+    reorderTodo: (state, action) => {
+      const { oldIndex, newIndex } = action.payload;
+      const toBeSwapped = state.splice(oldIndex, 1);
+      state.splice(newIndex, 0, toBeSwapped);
     }
   }
 });
@@ -38,7 +43,8 @@ export const {
   setTodos,
   addTodo,
   removeTodo,
-  editTodo
+  editTodo,
+  reorderTodo
 } = todosSlice.actions
 
 export default todosSlice.reducer
