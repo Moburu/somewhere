@@ -16,8 +16,7 @@ const Navbar = props => {
           size='large'
         >
           <Menu.Item header>Somewhere</Menu.Item>
-          <Menu.Item name='todo'><Link to="/todo">Todo</Link></Menu.Item>
-          <Menu.Item name='notes'><Link to="/notes">Notes</Link></Menu.Item>
+          <Menu.Item name='todo'>Todo</Menu.Item>
         </Menu>
     </div>
     // <div className="Navbar">

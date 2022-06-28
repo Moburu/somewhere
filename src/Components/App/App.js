@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from '../Navbar/Navbar.js';
-import { Outlet } from 'react-router-dom';
+import TodoApp from '../TodoApp/TodoApp';
 import { setTodos, reorderTodo } from '../../features/todosSlice/todosSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -42,7 +42,7 @@ function App() {
     >
       <div className="App">
         <Navbar />
-        <Outlet />
+        <TodoApp />
       </div>
     </DragDropContext>
   );

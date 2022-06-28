@@ -39,14 +39,8 @@ export const Todo = props => {
   }
 
   return (
-	<Draggable draggableId={props.id} index={props.index}>
-    {(provided) => (
-      <div
-        className='Todo'
-        {...provided.draggableProps}
-        {...provided.dragHandleProps}
-        ref={provided.innerRef}
-      >
+
+      <div className='Todo'>
         <Segment
           className='todo-segment'
           raised
@@ -79,7 +73,6 @@ export const Todo = props => {
           </span>
         </Segment>
       </div>
-    )}
-  </Draggable>
+
   )
 }

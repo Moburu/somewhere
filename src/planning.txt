@@ -19,3 +19,7 @@ Bugs found:
 
 What have I learned:
 - You need to use store.getState() in a subscribed listener in order to get the state post-dispatch. If you use the value of a selector, it will give you the old state.
+
+Problems I overcame:
+- Unexpected behavior of useSelector
+- React-beautiful-dnd bug

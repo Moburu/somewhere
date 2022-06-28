@@ -5,13 +5,12 @@ import { Todo } from '../Todo/Todo.js';
 import { useSelector } from 'react-redux';
 import { selectTodos } from '../../features/todosSlice/todosSlice';
 import { Transition, List } from 'semantic-ui-react';
-import { Droppable } from 'react-beautiful-dnd';
+import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 export const TodoList = props => {
   const todos = useSelector(selectTodos);
 
   return (
-
         <Droppable droppableId='1'>
           {provided => (
             <div
@@ -27,9 +26,23 @@ export const TodoList = props => {
                   (todo, index) => {
                     const id = 'todo-'+index;
                     return (
-                      <List.Item key={index}>
-                        <Todo content={todo} id={id} index={index}></Todo>
-                      </List.Item>
+                      <Draggable
+                        draggableId={index.toString()}
+                        index={index}
+                        key={index}
+                      >
+                        {(provided) => (
+                          <div
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            ref={provided.innerRef}
+                          >
+                            <List.Item>
+                              <Todo content={todo} id={id} index={index}></Todo>
+                            </List.Item>
+                          </div>
+                        )}
+                      </Draggable>
                     )
                   }
                 )}
