@@ -3,16 +3,16 @@ import './Todo.css';
 import { Button, Input, Segment, Form } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
 import { removeTodo, editTodo } from '../../features/todosSlice/todosSlice';
-import { Draggable } from 'react-beautiful-dnd';
 
 export const Todo = props => {
+  const { columnName, content, index } = props;
   const [editInput, setEditInput] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setEditInput(props.content);
-  }, []);
+    setEditInput(content);
+  }, [content]);
 
   const handleEdit = e => {
     e.preventDefault();
@@ -21,21 +21,33 @@ export const Todo = props => {
 
   const handleDelete = e => {
     e.preventDefault();
-    dispatch(removeTodo(props.content));
+    dispatch(removeTodo(
+      {
+        columnName: columnName,
+        content: content
+      }
+    ));
   }
 
   const handleChange = (e, { name, value }) => setEditInput(value);
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(editTodo([props.index, editInput]))
+    dispatch(editTodo(
+      {
+        columnName: columnName,
+        toBeEdited: index,
+        content: editInput
+      }
+    ))
     setIsEditing(false);
+    setEditInput(content);
   }
 
   const handleCancel = e => {
     e.preventDefault();
     setIsEditing(false);
-    setEditInput(props.content);
+    setEditInput(content);
   }
 
   return (

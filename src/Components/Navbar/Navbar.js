@@ -1,8 +1,6 @@
 import React from 'react'
 import './Navbar.css';
 import { Menu } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import headerLogo from './Somewhere.png';
 
 const Navbar = props => {
   return (

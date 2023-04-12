@@ -1,28 +1,25 @@
 import './App.css';
 import Navbar from '../Navbar/Navbar.js';
 import TodoApp from '../TodoApp/TodoApp';
-import { setTodos, reorderTodo } from '../../features/todosSlice/todosSlice';
-import { useEffect } from 'react';
+import { reorderTodo } from '../../features/todosSlice/todosSlice';
 import { useDispatch } from 'react-redux';
-import { fetchLocalState } from './store';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(setTodos(fetchLocalState()));
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(setTodos(fetchLocalState()));
+  // }, [dispatch])
 
   const onDragEnd = result => {
-    const { destination, source, draggableId } = result;
-
+    const { destination, source } = result;
     if (!destination) {
       return;
     }
 
     if (
-      destination.droppableID === source.droppableId &&
+      destination.droppableId === source.droppableId &&
       destination.index === source.index
     ) {
       return;
@@ -30,7 +27,9 @@ function App() {
 
     const coordinates = {
       oldIndex: source.index,
-      newIndex: destination.index
+      newIndex: destination.index,
+      oldColumn: source.droppableId,
+      newColumn: destination.droppableId
     }
 
     dispatch(reorderTodo(coordinates));
