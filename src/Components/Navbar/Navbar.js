@@ -14,7 +14,7 @@ const Navbar = props => {
           size='large'
         >
           <Menu.Item header>Somewhere</Menu.Item>
-          <Menu.Item name='todo'>Todo</Menu.Item>
+          <div className='firebaseui-auth-container'></div>
         </Menu>
     </div>
     // <div className="Navbar">

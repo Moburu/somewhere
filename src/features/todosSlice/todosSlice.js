@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   todo: ['yada', 'dada'],
-  in_progress: ['trada', 'skada']
+  in_progress: ['trada', 'skada'],
+  completed: ['pada', 'grada']
 };
 
 const todosSlice = createSlice({
@@ -25,7 +26,6 @@ const todosSlice = createSlice({
           )
         }
       } else if (columnName === 'in_progress') {
-        console.log(columnName);
         return {
           ...state,
           in_progress: state['in_progress'].filter(

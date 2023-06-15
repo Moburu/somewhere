@@ -18,7 +18,6 @@ export const TodoList = props => {
     <div className='TodoList'>
       {Object.entries(todosObj).map((todoList, outerIndex) => {
         let columnName;
-        let draggableClass = 'list-'+outerIndex;
         if (outerIndex === 0) {
           columnName = 'todo';
         } else if (outerIndex === 1) {
@@ -33,7 +32,7 @@ export const TodoList = props => {
           {(provided, snapshot) => {
           return (
             <div
-              className={draggableClass}
+              className='list'
               {...provided.droppableProps}
               ref={provided.innerRef}
               style={getListStyle(snapshot.isDraggingOver)}
